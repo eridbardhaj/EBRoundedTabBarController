@@ -1,5 +1,5 @@
 //
-//  RoundedTabBarController.swift
+//  EBRoundedTabBarController.swift
 //  RoundedTabBarControllerExample
 //
 //  Created by Erid Bardhaj on 10/28/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundedTabBarController: UITabBarController {
+class EBRoundedTabBarController: UITabBarController {
     
     
     // MARK: - Inner Types
@@ -81,13 +81,13 @@ class RoundedTabBarController: UITabBarController {
     // MARK: - Helpers
     
     private func createTabbarControllers() {
-        let systemTags = [CustomTabBarItem.firstItem, .secondItem, .roundedItem, .thirdItem, .fourthItem]
+        let systemTags = [EBRoundedTabBarItem.firstItem, .secondItem, .roundedItem, .thirdItem, .fourthItem]
         let viewControllers = systemTags.compactMap { self.createController(for: $0, with: $0.tag) }
         
         self.viewControllers = viewControllers
     }
     
-    private func createController(for customTabBarItem: CustomTabBarItem, with tag: Int) -> UINavigationController? {
+    private func createController(for customTabBarItem: EBRoundedTabBarItem, with tag: Int) -> UINavigationController? {
         let viewController = UIViewController()
         viewController.title = customTabBarItem.title
         viewController.tabBarItem = customTabBarItem.tabBarItem

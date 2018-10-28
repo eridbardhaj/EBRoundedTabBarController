@@ -1,5 +1,5 @@
 //
-//  CustomTabBarItem.swift
+//  EBRoundedTabBarItem.swift
 //  RoundedTabBarControllerExample
 //
 //  Created by Erid Bardhaj on 10/28/18.
@@ -8,28 +8,30 @@
 
 import UIKit
 
-enum CustomTabBarItem {
+enum EBRoundedTabBarItem {
     case firstItem, secondItem, roundedItem, thirdItem, fourthItem
+    
+    var isRoundedItem: Bool {
+        if case self = EBRoundedTabBarItem.roundedItem {
+            return true
+        }
+        
+        return false
+    }
 }
 
-extension CustomTabBarItem {
+extension EBRoundedTabBarItem {
     
     var title: String {
-        switch self {
-        case .firstItem, .secondItem, .thirdItem, .fourthItem:
-            return "Custom"
-        case .roundedItem:
+        if isRoundedItem {
             return ""
         }
+        
+        return "Custom"
     }
     
     var isEnabled: Bool {
-        switch self {
-        case .firstItem, .secondItem, .thirdItem, .fourthItem:
-            return true
-        case .roundedItem:
-            return false
-        }
+        return !isRoundedItem
     }
     
     var tag: Int {
@@ -47,18 +49,24 @@ extension CustomTabBarItem {
         }
     }
     
-    var image: UIImage {
-        return UIImage()
+    var image: UIImage? {
+        if isRoundedItem {
+            return nil
+        }
+        
+        return #imageLiteral(resourceName: "filled-circle.pdf")
     }
     
     var tabBarItem: UITabBarItem {
-        return UITabBarItem(title: title, image: image, tag: tag)
+        let tabItem = UITabBarItem(title: title, image: image, tag: tag)
+        tabItem.isEnabled = isEnabled
+        return tabItem
     }
     
     var backgroundColor: UIColor {
         switch self {
         case .firstItem:
-            return .magenta
+            return .cyan
         case .secondItem:
             return .green
         case .thirdItem:

@@ -23,9 +23,11 @@ class CustomViewController: UIViewController {
     // MARK: - Setups
     
     private func setupView() {
+        view.backgroundColor = .brown
+        
         navigationItem.title = "Modal"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .cancel,
+            barButtonSystemItem: .done,
             target: self,
             action: #selector(dismissController)
         )

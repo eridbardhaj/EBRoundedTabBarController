@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupRootViewController() {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = RoundedTabBarController()
+        window.rootViewController = EBRoundedTabBarController()
         window.makeKeyAndVisible()
         self.window = window
     }
