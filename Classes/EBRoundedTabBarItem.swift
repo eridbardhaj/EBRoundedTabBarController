@@ -10,26 +10,28 @@ import UIKit
 
 enum EBRoundedTabBarItem {
     case firstItem, secondItem, roundedItem, thirdItem, fourthItem
+    
+    var isRoundedItem: Bool {
+        if case self = EBRoundedTabBarItem.roundedItem {
+            return true
+        }
+        
+        return false
+    }
 }
 
 extension EBRoundedTabBarItem {
     
     var title: String {
-        switch self {
-        case .firstItem, .secondItem, .thirdItem, .fourthItem:
-            return "Custom"
-        case .roundedItem:
+        if isRoundedItem {
             return ""
         }
+        
+        return "Custom"
     }
     
     var isEnabled: Bool {
-        switch self {
-        case .firstItem, .secondItem, .thirdItem, .fourthItem:
-            return true
-        case .roundedItem:
-            return false
-        }
+        return !isRoundedItem
     }
     
     var tag: Int {
@@ -47,8 +49,12 @@ extension EBRoundedTabBarItem {
         }
     }
     
-    var image: UIImage {
-        return UIImage()
+    var image: UIImage? {
+        if isRoundedItem {
+            return nil
+        }
+        
+        return #imageLiteral(resourceName: "filled-circle.pdf")
     }
     
     var tabBarItem: UITabBarItem {
@@ -60,7 +66,7 @@ extension EBRoundedTabBarItem {
     var backgroundColor: UIColor {
         switch self {
         case .firstItem:
-            return .magenta
+            return .cyan
         case .secondItem:
             return .green
         case .thirdItem:
