@@ -1,5 +1,5 @@
 //
-//  CustomTabBarItem.swift
+//  EBRoundedTabBarItem.swift
 //  RoundedTabBarControllerExample
 //
 //  Created by Erid Bardhaj on 10/28/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-enum CustomTabBarItem {
+enum EBRoundedTabBarItem {
     case firstItem, secondItem, roundedItem, thirdItem, fourthItem
 }
 
-extension CustomTabBarItem {
+extension EBRoundedTabBarItem {
     
     var title: String {
         switch self {
