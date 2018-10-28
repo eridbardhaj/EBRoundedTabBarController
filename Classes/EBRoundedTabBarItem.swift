@@ -52,7 +52,9 @@ extension EBRoundedTabBarItem {
     }
     
     var tabBarItem: UITabBarItem {
-        return UITabBarItem(title: title, image: image, tag: tag)
+        let tabItem = UITabBarItem(title: title, image: image, tag: tag)
+        tabItem.isEnabled = isEnabled
+        return tabItem
     }
     
     var backgroundColor: UIColor {
