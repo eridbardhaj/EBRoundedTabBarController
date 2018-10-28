@@ -11,16 +11,6 @@ import UIKit
 class CustomViewController: UIViewController {
     
     
-    // MARK: - Properties
-    // MARK: Immutable
-    
-    private let dismissBarButtonItem = UIBarButtonItem(
-        barButtonSystemItem: .cancel,
-        target: self,
-        action: #selector(dismissController)
-    )
-    
-    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -34,13 +24,17 @@ class CustomViewController: UIViewController {
     
     private func setupView() {
         navigationItem.title = "Modal"
-        navigationItem.rightBarButtonItem = dismissBarButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .cancel,
+            target: self,
+            action: #selector(dismissController)
+        )
     }
     
     
     // MARK: - Actions
     
     @objc private func dismissController() {
-        dismiss(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }
