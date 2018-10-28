@@ -6,8 +6,6 @@
 //  Copyright © 2018 Erid Bardhaj. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 enum CustomTabBarItem {
@@ -56,4 +54,20 @@ extension CustomTabBarItem {
     var tabBarItem: UITabBarItem {
         return UITabBarItem(title: title, image: image, tag: tag)
     }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .firstItem:
+            return .magenta
+        case .secondItem:
+            return .green
+        case .thirdItem:
+            return .orange
+        case .fourthItem:
+            return .gray
+        default:
+            return .white
+        }
+    }
 }
+
