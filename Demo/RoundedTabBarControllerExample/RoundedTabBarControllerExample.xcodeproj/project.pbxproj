@@ -58,8 +58,8 @@
 			children = (
 				E89E7D7D2186210F00960CE8 /* Application */,
 				E89E7D82218623BB00960CE8 /* Controllers */,
-				E89E7D7E2186211D00960CE8 /* Resources */,
 				E89E7D7F2186214700960CE8 /* Classes */,
+				E89E7D7E2186211D00960CE8 /* Resources */,
 			);
 			path = RoundedTabBarControllerExample;
 			sourceTree = "<group>";
