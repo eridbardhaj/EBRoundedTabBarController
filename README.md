@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Custom TabBarController with a middle rounded icon
+Custom TabBarController with a middle rounded button
 
 ## Use
 
