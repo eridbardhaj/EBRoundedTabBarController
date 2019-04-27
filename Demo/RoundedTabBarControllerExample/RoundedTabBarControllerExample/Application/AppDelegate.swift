@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  RoundedTabBarControllerExample
-//
-//  Created by Erid Bardhaj on 10/28/18.
-//  Copyright © 2018 Erid Bardhaj. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
